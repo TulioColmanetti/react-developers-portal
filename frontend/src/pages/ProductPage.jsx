@@ -72,10 +72,15 @@ export default function ProductPage() {
           </div>
           <div className="flex flex-col space-y-2">
             <Collapsible
-              trigger={[<p className="font-semibold">Arquivos:</p>, <BsChevronDown />]}
+              trigger={
+                <>
+                  <p className="font-semibold">Arquivos:</p>
+                  <BsChevronDown size="1.1rem" />
+                </>
+              }
               transitionTime="200"
-              triggerClassName="flex flex-row p-2 items-center justify-between rounded-lg bg-yellow-100"
-              triggerOpenedClassName="flex flex-row p-2 items-center justify-between rounded-t-lg bg-yellow-100"
+              triggerClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-lg"
+              triggerOpenedClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-t-lg"
               // contentOuterClassName="border border-black"
               contentInnerClassName="p-2 rounded-b-lg bg-gray-100"
             >
@@ -87,7 +92,7 @@ export default function ProductPage() {
                       href={PRODUCT_FILES_FOLDER + archive_name}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex flex-col items-center space-y-1"
+                      className="flex flex-col items-center space-y-1 hover:text-yellow-500 hover:scale-105"
                     >
                       {extension.toLowerCase() === 'zip' && <FileZipIcon size="2rem" />}
                       {extension.toLowerCase() === 'pdf' && <FilePdfIcon size="2rem" />}
