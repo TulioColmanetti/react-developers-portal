@@ -55,10 +55,10 @@ export default function ProductPage() {
     mainJsx = (
       <>
         <h3 className="text-center font-semibold mb-6">{product.name}</h3>
-        <div className="w-3/5 mx-auto p-4 bg-gray-200 rounded-lg shadow-md">
+        <div className="max-w-2xl mx-auto p-4 bg-gray-200 rounded-lg shadow-md">
           <div className="flex flex-row mx-auto space-x-2 mb-2">
-            <img src={PRODUCT_IMAGES_FOLDER + product.image} alt="" className="h-48 m-4" />
-            <div className="flex flex-col space-y-4">
+            <img src={PRODUCT_IMAGES_FOLDER + product.image} alt="" className="h-48 m-2" />
+            <div className="flex flex-col space-y-4 p-2">
               <p>{product.description}</p>
               <p>
                 <span className="font-semibold">Categoria: </span>
@@ -68,13 +68,21 @@ export default function ProductPage() {
                 <span className="font-semibold">Modelo: </span>
                 {product.model}
               </p>
+              <p>
+                <span className="font-semibold">Versão de Firmware: </span>
+                {product.model}
+              </p>
+              <p>
+                <span className="font-semibold">Versão dos Arquivos: </span>
+                {product.model}
+              </p>
             </div>
           </div>
           <div className="flex flex-col space-y-2">
             <Collapsible
               trigger={
                 <>
-                  <p className="font-semibold">Arquivos:</p>
+                  <p className="font-semibold">Arquivos</p>
                   <BsChevronDown size="1.1rem" />
                 </>
               }
