@@ -9,6 +9,7 @@ import { BsChevronDown } from 'react-icons/bs';
 import Loading from '../components/Loading';
 import Error from '../components/Error';
 import { apiGetProductFrom } from '../services/apiService';
+import Select from '../components/Select';
 
 const PRODUCT_FILES_FOLDER = '/files/products/';
 const PRODUCT_IMAGES_FOLDER = '/img/products/';
@@ -56,7 +57,7 @@ export default function ProductPage() {
       <>
         <h3 className="text-center font-semibold mb-6">{product.name}</h3>
         <div className="max-w-2xl mx-auto p-4 bg-gray-200 rounded-lg shadow-md">
-          <div className="flex flex-row mx-auto space-x-2 mb-2">
+          <div className="flex flex-row mx-auto items-center space-x-2 mb-2">
             <img src={PRODUCT_IMAGES_FOLDER + product.image} alt="" className="h-48 m-2" />
             <div className="flex flex-col space-y-4 p-2">
               <p>{product.description}</p>
@@ -68,14 +69,23 @@ export default function ProductPage() {
                 <span className="font-semibold">Modelo: </span>
                 {product.model}
               </p>
-              <p>
-                <span className="font-semibold">Versão de Firmware: </span>
-                {product.model}
-              </p>
-              <p>
-                <span className="font-semibold">Versão dos Arquivos: </span>
-                {product.model}
-              </p>
+              <Select
+                labelDescription="Versão de Firmware: "
+                // onChangeValue = null
+              >
+                {product.firmare_versions.map((firm) => {
+                  return { id: firm, description: firm };
+                })}
+              </Select>
+              <Select
+                labelDescription="Versão dos Arquivos: "
+                // onChangeValue = null
+              >
+                {[
+                  { id: 'op1', description: 'Todas' },
+                  { id: 'op2', description: 'Mais recente' },
+                ]}
+              </Select>
             </div>
           </div>
           <div className="flex flex-col space-y-2">
@@ -87,10 +97,11 @@ export default function ProductPage() {
                 </>
               }
               transitionTime="200"
-              triggerClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-lg"
+              triggerClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-lg shadow-md"
               triggerOpenedClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-t-lg"
               // contentOuterClassName="border border-black"
               contentInnerClassName="p-2 rounded-b-lg bg-gray-100"
+              contentOuterClassName="shadow-md"
             >
               <div className="grid grid-cols-5 gap-4 mx-auto">
                 {product.files.map(({ id, name_with_version, archive_name, extension }) => {
