@@ -1,87 +1,112 @@
 {
   "products": [
     {
-      "id": "b609d8e7-babb-4168-8290-59ff43389176",
-      "name": "Pinpad - 1",
-      "description": "Essa seção é dedicada à descrição do produto Pinpad - 1.",
-      "category": "Pinpad",
-      "model": "",
-      "image": "pinpad-image.png",
-      "firmare_versions": [],
+      "id": "e1c40c1b-3551-4cc6-9ba7-9818f3cd9134",
+      "name": "Impressora 3D - 1",
+      "description": "Essa seção é dedicada à descrição do produto Impressora 3D - 1.",
+      "category": "Impressora 3D",
+      "model": "M23A",
+      "image": "3d-printer-image.png",
+      "firmare_versions": [
+        "FW-20170704-D",
+        "FW-20170923-E"
+      ],
       "files": [
         {
-          "id": "76969375-3e21-4255-afa0-0e9b4edb7886",
-          "name": "Manual",
-          "category": "Documentação",
+          "id": "71a5d282-069d-4a27-b814-f73f2ace008b",
+          "name": "Certificação",
+          "category": "Outros",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Manual-v1.0",
+          "firmare_effectivity": [
+            "FW-20170704-D",
+            "FW-20170923-E"
+          ],
+          "name_with_version": "Certificação-v1.0",
           "extension": "pdf",
           "archive_name": "product1-file1-v1.0.pdf",
           "url": "/product1-file1-v1.0.pdf"
         },
         {
-          "id": "a28a6c96-8255-4680-afbf-537362063913",
-          "name": "Manual",
-          "category": "Documentação",
+          "id": "8ad22c7a-902d-402e-8dfa-6a35e8426d5e",
+          "name": "Certificação",
+          "category": "Outros",
           "version_name": "v2.0",
           "version_code": 2,
-          "name_with_version": "Manual-v2.0",
+          "firmare_effectivity": [
+            "FW-20170704-D"
+          ],
+          "name_with_version": "Certificação-v2.0",
           "extension": "pdf",
           "archive_name": "product1-file1-v2.0.pdf",
           "url": "/product1-file1-v2.0.pdf"
         },
         {
-          "id": "090a54c0-5a9b-4167-b419-04f98ac943e4",
-          "name": "Datasheet",
-          "category": "Documentação",
-          "version_name": "v1.0",
-          "version_code": 1,
-          "name_with_version": "Datasheet-v1.0",
-          "extension": "pdf",
-          "archive_name": "product1-file2-v1.0.pdf",
-          "url": "/product1-file2-v1.0.pdf"
-        },
-        {
-          "id": "ad4afaa5-58cc-4ea1-891b-7a71630456e6",
-          "name": "Datasheet",
-          "category": "Documentação",
-          "version_name": "v2.0",
-          "version_code": 2,
-          "name_with_version": "Datasheet-v2.0",
-          "extension": "pdf",
-          "archive_name": "product1-file2-v2.0.pdf",
-          "url": "/product1-file2-v2.0.pdf"
-        },
-        {
-          "id": "bd3d1f83-0f86-4f11-9ee0-fd3465402970",
-          "name": "Datasheet",
-          "category": "Documentação",
+          "id": "07061f0b-1551-4406-9416-080fb6b9dae2",
+          "name": "Certificação",
+          "category": "Outros",
           "version_name": "v3.0",
           "version_code": 3,
-          "name_with_version": "Datasheet-v3.0",
+          "firmare_effectivity": [
+            "FW-20170704-D"
+          ],
+          "name_with_version": "Certificação-v3.0",
           "extension": "pdf",
-          "archive_name": "product1-file2-v3.0.pdf",
-          "url": "/product1-file2-v3.0.pdf"
+          "archive_name": "product1-file1-v3.0.pdf",
+          "url": "/product1-file1-v3.0.pdf"
         },
         {
-          "id": "8214ee39-abe8-4a44-9635-1b23dd00abe2",
-          "name": "Drivers",
-          "category": "Recurso de Desenvolvimento",
+          "id": "949c5c47-36a8-466c-99ce-2122aeb3ab4f",
+          "name": "Hotfix",
+          "category": "Atualização",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Drivers-v1.0",
+          "firmare_effectivity": [
+            "FW-20170704-D"
+          ],
+          "name_with_version": "Hotfix-v1.0",
+          "extension": "zip",
+          "archive_name": "product1-file2-v1.0.zip",
+          "url": "/product1-file2-v1.0.zip"
+        },
+        {
+          "id": "d98d1413-d66e-44b2-9d5e-f1b28155759c",
+          "name": "Hotfix",
+          "category": "Atualização",
+          "version_name": "v2.0",
+          "version_code": 2,
+          "firmare_effectivity": [
+            "FW-20170923-E"
+          ],
+          "name_with_version": "Hotfix-v2.0",
+          "extension": "zip",
+          "archive_name": "product1-file2-v2.0.zip",
+          "url": "/product1-file2-v2.0.zip"
+        },
+        {
+          "id": "1de48686-82e0-4d91-883a-a6cf9045b7c5",
+          "name": "Atualizador",
+          "category": "Atualização",
+          "version_name": "v1.0",
+          "version_code": 1,
+          "firmare_effectivity": [
+            "FW-20170923-E"
+          ],
+          "name_with_version": "Atualizador-v1.0",
           "extension": "zip",
           "archive_name": "product1-file3-v1.0.zip",
           "url": "/product1-file3-v1.0.zip"
         },
         {
-          "id": "5e39f170-469c-4a69-85a8-60dc5ba1a1fd",
-          "name": "Drivers",
-          "category": "Recurso de Desenvolvimento",
+          "id": "1b33769c-b692-4cc6-ae46-d78f6decd2e7",
+          "name": "Atualizador",
+          "category": "Atualização",
           "version_name": "v2.0",
           "version_code": 2,
-          "name_with_version": "Drivers-v2.0",
+          "firmare_effectivity": [
+            "FW-20170923-E"
+          ],
+          "name_with_version": "Atualizador-v2.0",
           "extension": "zip",
           "archive_name": "product1-file3-v2.0.zip",
           "url": "/product1-file3-v2.0.zip"
@@ -89,387 +114,615 @@
       ]
     },
     {
-      "id": "6e6c46fe-465f-4dba-9b59-fe2ada26f849",
-      "name": "Smartwatch - 2",
-      "description": "Essa seção é dedicada à descrição do produto Smartwatch - 2.",
-      "category": "Smartwatch",
-      "model": "",
-      "image": "smartwatch-image.png",
-      "firmare_versions": [],
+      "id": "e0ca64c4-7c4a-4ebd-88d8-2a82b2248e19",
+      "name": "Impressora - 2",
+      "description": "Essa seção é dedicada à descrição do produto Impressora - 2.",
+      "category": "Impressora",
+      "model": "XPTO-9000",
+      "image": "printer-image.png",
+      "firmare_versions": [
+        "FW-20170229-C"
+      ],
       "files": [
         {
-          "id": "26671868-23f2-4020-8924-83dd5704b3bc",
-          "name": "Patcher",
+          "id": "f7c2ee6e-3b1c-4b40-9077-eebfd5a207d0",
+          "name": "Hotfix",
           "category": "Atualização",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Patcher-v1.0",
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Hotfix-v1.0",
           "extension": "zip",
           "archive_name": "product2-file1-v1.0.zip",
           "url": "/product2-file1-v1.0.zip"
         },
         {
-          "id": "3e125028-80ed-4480-8d74-d9cc8b786be1",
-          "name": "Patcher",
+          "id": "8743520d-e816-49d8-b4bb-9baa2343f556",
+          "name": "Hotfix",
           "category": "Atualização",
           "version_name": "v2.0",
           "version_code": 2,
-          "name_with_version": "Patcher-v2.0",
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Hotfix-v2.0",
           "extension": "zip",
           "archive_name": "product2-file1-v2.0.zip",
           "url": "/product2-file1-v2.0.zip"
         },
         {
-          "id": "d38737f8-42ac-4524-baed-b72585f0b36e",
-          "name": "Patcher",
+          "id": "a0bc0d84-2928-4596-96e8-689425455f0d",
+          "name": "Hotfix",
           "category": "Atualização",
           "version_name": "v3.0",
           "version_code": 3,
-          "name_with_version": "Patcher-v3.0",
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Hotfix-v3.0",
           "extension": "zip",
           "archive_name": "product2-file1-v3.0.zip",
           "url": "/product2-file1-v3.0.zip"
         },
         {
-          "id": "94c90ce4-b794-4166-b0f5-a85f67617c24",
+          "id": "1a2f8fc8-be49-4e9c-9f01-f64398a8fd10",
           "name": "Norma-B",
           "category": "Outros",
           "version_name": "v1.0",
           "version_code": 1,
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
           "name_with_version": "Norma-B-v1.0",
           "extension": "pdf",
           "archive_name": "product2-file2-v1.0.pdf",
           "url": "/product2-file2-v1.0.pdf"
         },
         {
-          "id": "7e691303-5d04-4784-bd56-5e2f39fe4e4f",
+          "id": "23849b9e-0fab-44a8-acb2-2a88b3b9f7cd",
           "name": "Norma-B",
           "category": "Outros",
           "version_name": "v2.0",
           "version_code": 2,
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
           "name_with_version": "Norma-B-v2.0",
           "extension": "pdf",
           "archive_name": "product2-file2-v2.0.pdf",
           "url": "/product2-file2-v2.0.pdf"
         },
         {
-          "id": "d0ebd09e-4784-4a24-80b5-e5a05042cdc3",
-          "name": "Guia-do-usuário",
-          "category": "Documentação",
+          "id": "d604b5d1-0446-4ab2-ae67-bbfdced0c8ab",
+          "name": "Patcher",
+          "category": "Atualização",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Guia-do-usuário-v1.0",
-          "extension": "pdf",
-          "archive_name": "product2-file3-v1.0.pdf",
-          "url": "/product2-file3-v1.0.pdf"
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Patcher-v1.0",
+          "extension": "zip",
+          "archive_name": "product2-file3-v1.0.zip",
+          "url": "/product2-file3-v1.0.zip"
+        },
+        {
+          "id": "09103729-8eab-451e-8860-7302033245ff",
+          "name": "Patcher",
+          "category": "Atualização",
+          "version_name": "v2.0",
+          "version_code": 2,
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Patcher-v2.0",
+          "extension": "zip",
+          "archive_name": "product2-file3-v2.0.zip",
+          "url": "/product2-file3-v2.0.zip"
+        },
+        {
+          "id": "d524eecf-7539-4513-a462-742c84a9815d",
+          "name": "Patcher",
+          "category": "Atualização",
+          "version_name": "v3.0",
+          "version_code": 3,
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Patcher-v3.0",
+          "extension": "zip",
+          "archive_name": "product2-file3-v3.0.zip",
+          "url": "/product2-file3-v3.0.zip"
         }
       ]
     },
     {
-      "id": "3cd040b8-ba4c-4865-b460-0bb12b2b2f66",
-      "name": "Impressora 3D - 3",
-      "description": "Essa seção é dedicada à descrição do produto Impressora 3D - 3.",
-      "category": "Impressora 3D",
-      "model": "",
-      "image": "3d-printer-image.png",
-      "firmare_versions": [],
+      "id": "ba2e7321-ad14-42bb-be63-13533729a1b9",
+      "name": "Smartphone - 3",
+      "description": "Essa seção é dedicada à descrição do produto Smartphone - 3.",
+      "category": "Smartphone",
+      "model": "KAJF-141",
+      "image": "smartphone-image.png",
+      "firmare_versions": [
+        "FW-20200222-B"
+      ],
       "files": [
         {
-          "id": "dd50f0c1-bb80-4180-8b3d-9e76d7b74ebb",
-          "name": "Manual",
-          "category": "Documentação",
+          "id": "0d59b7d0-3b38-49e0-a418-aafbfb702464",
+          "name": "Hotfix",
+          "category": "Atualização",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Manual-v1.0",
-          "extension": "pdf",
-          "archive_name": "product3-file1-v1.0.pdf",
-          "url": "/product3-file1-v1.0.pdf"
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Hotfix-v1.0",
+          "extension": "zip",
+          "archive_name": "product3-file1-v1.0.zip",
+          "url": "/product3-file1-v1.0.zip"
         },
         {
-          "id": "5422d3e3-a86f-413f-b2de-f56e8ec61af4",
-          "name": "Manual",
-          "category": "Documentação",
+          "id": "beaaace9-ea25-40c9-a6cf-ff6433bf8500",
+          "name": "Hotfix",
+          "category": "Atualização",
           "version_name": "v2.0",
           "version_code": 2,
-          "name_with_version": "Manual-v2.0",
-          "extension": "pdf",
-          "archive_name": "product3-file1-v2.0.pdf",
-          "url": "/product3-file1-v2.0.pdf"
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Hotfix-v2.0",
+          "extension": "zip",
+          "archive_name": "product3-file1-v2.0.zip",
+          "url": "/product3-file1-v2.0.zip"
         },
         {
-          "id": "7dbaefe6-dd6b-4c4f-a019-9551cfc138fd",
-          "name": "Manual",
-          "category": "Documentação",
+          "id": "03bad1aa-8004-4384-9bb4-d3ce66bbbbc6",
+          "name": "Hotfix",
+          "category": "Atualização",
           "version_name": "v3.0",
           "version_code": 3,
-          "name_with_version": "Manual-v3.0",
-          "extension": "pdf",
-          "archive_name": "product3-file1-v3.0.pdf",
-          "url": "/product3-file1-v3.0.pdf"
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Hotfix-v3.0",
+          "extension": "zip",
+          "archive_name": "product3-file1-v3.0.zip",
+          "url": "/product3-file1-v3.0.zip"
         },
         {
-          "id": "9cfacc50-5324-4b01-b6a4-40f70cd0ecb1",
-          "name": "Image-pack",
+          "id": "9dfc81e5-824d-4402-ae02-bc943561a334",
+          "name": "Drivers",
           "category": "Recurso de Desenvolvimento",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Image-pack-v1.0",
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Drivers-v1.0",
           "extension": "zip",
           "archive_name": "product3-file2-v1.0.zip",
           "url": "/product3-file2-v1.0.zip"
         },
         {
-          "id": "540ab9f7-f1ac-4b22-b618-fb795402a206",
-          "name": "Image-pack",
+          "id": "16ee9823-4f8d-4a4a-9d6d-8ded2c7b5e19",
+          "name": "Drivers",
           "category": "Recurso de Desenvolvimento",
           "version_name": "v2.0",
           "version_code": 2,
-          "name_with_version": "Image-pack-v2.0",
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Drivers-v2.0",
           "extension": "zip",
           "archive_name": "product3-file2-v2.0.zip",
           "url": "/product3-file2-v2.0.zip"
         },
         {
-          "id": "65bfc5ac-2dc6-4e41-82d7-bda34cb4507e",
-          "name": "Image-pack",
+          "id": "f446c4c8-0e70-4cad-871d-2c8823444960",
+          "name": "Drivers",
           "category": "Recurso de Desenvolvimento",
           "version_name": "v3.0",
           "version_code": 3,
-          "name_with_version": "Image-pack-v3.0",
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Drivers-v3.0",
           "extension": "zip",
           "archive_name": "product3-file2-v3.0.zip",
           "url": "/product3-file2-v3.0.zip"
         },
         {
-          "id": "f962e95f-4561-405e-80b0-9f83afd47b58",
-          "name": "SDK",
-          "category": "Recurso de Desenvolvimento",
+          "id": "407037a9-f49e-4118-8f5a-b022765ea59e",
+          "name": "Catálogo",
+          "category": "Outros",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "SDK-v1.0",
-          "extension": "zip",
-          "archive_name": "product3-file3-v1.0.zip",
-          "url": "/product3-file3-v1.0.zip"
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Catálogo-v1.0",
+          "extension": "pdf",
+          "archive_name": "product3-file3-v1.0.pdf",
+          "url": "/product3-file3-v1.0.pdf"
+        },
+        {
+          "id": "0f9f185a-50bf-4d01-b982-deeeb030ae8c",
+          "name": "Catálogo",
+          "category": "Outros",
+          "version_name": "v2.0",
+          "version_code": 2,
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Catálogo-v2.0",
+          "extension": "pdf",
+          "archive_name": "product3-file3-v2.0.pdf",
+          "url": "/product3-file3-v2.0.pdf"
+        },
+        {
+          "id": "00f74b5a-d1bd-40ff-b81a-d71b1ddf8572",
+          "name": "Catálogo",
+          "category": "Outros",
+          "version_name": "v3.0",
+          "version_code": 3,
+          "firmare_effectivity": [
+            "FW-20200222-B"
+          ],
+          "name_with_version": "Catálogo-v3.0",
+          "extension": "pdf",
+          "archive_name": "product3-file3-v3.0.pdf",
+          "url": "/product3-file3-v3.0.pdf"
         }
       ]
     },
     {
-      "id": "ba785248-f14e-4c83-b647-738caa95dfa0",
-      "name": "Smartphone - 4",
-      "description": "Essa seção é dedicada à descrição do produto Smartphone - 4.",
-      "category": "Smartphone",
-      "model": "",
-      "image": "smartphone-image.png",
-      "firmare_versions": [],
+      "id": "d327bb9a-f8ac-4b66-a044-c689288e8b2b",
+      "name": "Maquininha de Pagamento (POS) - 4",
+      "description": "Essa seção é dedicada à descrição do produto Maquininha de Pagamento (POS) - 4.",
+      "category": "Maquininha de Pagamento (POS)",
+      "model": "ABZ-5000",
+      "image": "pos-image.png",
+      "firmare_versions": [
+        "FW-20170923-E",
+        "FW-20170229-C",
+        "FW-20101201-A",
+        "FW-20220114-A"
+      ],
       "files": [
         {
-          "id": "5e59bd38-c868-4349-950e-efd3b9ce40d3",
-          "name": "Guia-do-usuário",
+          "id": "acf5762e-a97e-4a40-8157-f6da6013d5d7",
+          "name": "Datasheet",
           "category": "Documentação",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Guia-do-usuário-v1.0",
+          "firmare_effectivity": [
+            "FW-20220114-A",
+            "FW-20170229-C",
+            "FW-20101201-A"
+          ],
+          "name_with_version": "Datasheet-v1.0",
           "extension": "pdf",
           "archive_name": "product4-file1-v1.0.pdf",
           "url": "/product4-file1-v1.0.pdf"
         },
         {
-          "id": "7bdcdfd4-501f-41e8-9832-2a1ba73c6787",
-          "name": "Guia-do-usuário",
-          "category": "Documentação",
-          "version_name": "v2.0",
-          "version_code": 2,
-          "name_with_version": "Guia-do-usuário-v2.0",
-          "extension": "pdf",
-          "archive_name": "product4-file1-v2.0.pdf",
-          "url": "/product4-file1-v2.0.pdf"
-        },
-        {
-          "id": "8df431c9-f60e-4b36-b61d-8f67f8618ead",
-          "name": "Guia-do-usuário",
-          "category": "Documentação",
-          "version_name": "v3.0",
-          "version_code": 3,
-          "name_with_version": "Guia-do-usuário-v3.0",
-          "extension": "pdf",
-          "archive_name": "product4-file1-v3.0.pdf",
-          "url": "/product4-file1-v3.0.pdf"
-        },
-        {
-          "id": "166a546f-1e66-41db-8695-fabbcea9a90e",
-          "name": "Datasheet",
-          "category": "Documentação",
+          "id": "00f4610a-b1e6-437d-ab70-de8675ebf74d",
+          "name": "Drivers",
+          "category": "Recurso de Desenvolvimento",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Datasheet-v1.0",
-          "extension": "pdf",
-          "archive_name": "product4-file2-v1.0.pdf",
-          "url": "/product4-file2-v1.0.pdf"
+          "firmare_effectivity": [
+            "FW-20220114-A",
+            "FW-20170229-C",
+            "FW-20101201-A"
+          ],
+          "name_with_version": "Drivers-v1.0",
+          "extension": "zip",
+          "archive_name": "product4-file2-v1.0.zip",
+          "url": "/product4-file2-v1.0.zip"
         },
         {
-          "id": "79ba1ce3-6780-460c-97f5-3792c011378a",
-          "name": "Datasheet",
-          "category": "Documentação",
+          "id": "0a1f5562-8edb-4471-8288-8cd88cfd9d88",
+          "name": "Drivers",
+          "category": "Recurso de Desenvolvimento",
           "version_name": "v2.0",
           "version_code": 2,
-          "name_with_version": "Datasheet-v2.0",
-          "extension": "pdf",
-          "archive_name": "product4-file2-v2.0.pdf",
-          "url": "/product4-file2-v2.0.pdf"
+          "firmare_effectivity": [
+            "FW-20170229-C",
+            "FW-20170923-E",
+            "FW-20101201-A",
+            "FW-20220114-A"
+          ],
+          "name_with_version": "Drivers-v2.0",
+          "extension": "zip",
+          "archive_name": "product4-file2-v2.0.zip",
+          "url": "/product4-file2-v2.0.zip"
         },
         {
-          "id": "00a5190b-7aaa-4ad9-9c16-5e2bf5f8ad78",
-          "name": "Datasheet",
-          "category": "Documentação",
-          "version_name": "v3.0",
-          "version_code": 3,
-          "name_with_version": "Datasheet-v3.0",
-          "extension": "pdf",
-          "archive_name": "product4-file2-v3.0.pdf",
-          "url": "/product4-file2-v3.0.pdf"
-        },
-        {
-          "id": "d799f26e-7137-4316-b3be-9220669da92c",
-          "name": "Hotfix",
-          "category": "Atualização",
+          "id": "76fb1f6e-9e1d-43d2-82ff-b167462f2506",
+          "name": "Certificação",
+          "category": "Outros",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Hotfix-v1.0",
-          "extension": "zip",
-          "archive_name": "product4-file3-v1.0.zip",
-          "url": "/product4-file3-v1.0.zip"
+          "firmare_effectivity": [
+            "FW-20220114-A",
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Certificação-v1.0",
+          "extension": "pdf",
+          "archive_name": "product4-file3-v1.0.pdf",
+          "url": "/product4-file3-v1.0.pdf"
         },
         {
-          "id": "3c0a7702-4375-4bac-8368-a881108b9202",
-          "name": "Hotfix",
-          "category": "Atualização",
+          "id": "f12b925f-82d5-4fa4-a276-13fe4c31ff69",
+          "name": "Certificação",
+          "category": "Outros",
           "version_name": "v2.0",
           "version_code": 2,
-          "name_with_version": "Hotfix-v2.0",
-          "extension": "zip",
-          "archive_name": "product4-file3-v2.0.zip",
-          "url": "/product4-file3-v2.0.zip"
+          "firmare_effectivity": [
+            "FW-20170229-C",
+            "FW-20220114-A"
+          ],
+          "name_with_version": "Certificação-v2.0",
+          "extension": "pdf",
+          "archive_name": "product4-file3-v2.0.pdf",
+          "url": "/product4-file3-v2.0.pdf"
         },
         {
-          "id": "12dd55c7-ecc5-48ac-8d13-8eae576b1a29",
-          "name": "Hotfix",
-          "category": "Atualização",
+          "id": "0ea7987a-a1a3-4472-968b-d631b5227f86",
+          "name": "Certificação",
+          "category": "Outros",
           "version_name": "v3.0",
           "version_code": 3,
-          "name_with_version": "Hotfix-v3.0",
-          "extension": "zip",
-          "archive_name": "product4-file3-v3.0.zip",
-          "url": "/product4-file3-v3.0.zip"
+          "firmare_effectivity": [
+            "FW-20170923-E",
+            "FW-20220114-A",
+            "FW-20170229-C",
+            "FW-20101201-A"
+          ],
+          "name_with_version": "Certificação-v3.0",
+          "extension": "pdf",
+          "archive_name": "product4-file3-v3.0.pdf",
+          "url": "/product4-file3-v3.0.pdf"
         }
       ]
     },
     {
-      "id": "97a5bcff-7b1d-4b2d-9ff1-23f979c500a6",
-      "name": "Impressora - 5",
-      "description": "Essa seção é dedicada à descrição do produto Impressora - 5.",
-      "category": "Impressora",
-      "model": "",
-      "image": "printer-image.png",
-      "firmare_versions": [],
+      "id": "edf4b03d-ded9-4d64-8203-c4a36128bea1",
+      "name": "Pinpad - 5",
+      "description": "Essa seção é dedicada à descrição do produto Pinpad - 5.",
+      "category": "Pinpad",
+      "model": "X-3",
+      "image": "pinpad-image.png",
+      "firmare_versions": [
+        "FW-20170229-C",
+        "FW-20150809-C"
+      ],
       "files": [
         {
-          "id": "97c6c260-b494-4ac9-b438-5e69c5745b84",
+          "id": "24674182-5e55-42ee-90d1-2f85b4693fc5",
           "name": "Hotfix",
           "category": "Atualização",
           "version_name": "v1.0",
           "version_code": 1,
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
           "name_with_version": "Hotfix-v1.0",
           "extension": "zip",
           "archive_name": "product5-file1-v1.0.zip",
           "url": "/product5-file1-v1.0.zip"
         },
         {
-          "id": "85dc80fd-973e-412b-afa7-f5bb9d329b81",
+          "id": "6296757f-4e3b-4a06-8ce7-80db00f0c029",
           "name": "Hotfix",
           "category": "Atualização",
           "version_name": "v2.0",
           "version_code": 2,
+          "firmare_effectivity": [
+            "FW-20170229-C",
+            "FW-20150809-C"
+          ],
           "name_with_version": "Hotfix-v2.0",
           "extension": "zip",
           "archive_name": "product5-file1-v2.0.zip",
           "url": "/product5-file1-v2.0.zip"
         },
         {
-          "id": "e265fe38-d653-4900-984e-b0ab4ac685a9",
-          "name": "Certificação",
-          "category": "Outros",
-          "version_name": "v1.0",
-          "version_code": 1,
-          "name_with_version": "Certificação-v1.0",
-          "extension": "pdf",
-          "archive_name": "product5-file2-v1.0.pdf",
-          "url": "/product5-file2-v1.0.pdf"
+          "id": "eb676c3d-d3cb-43eb-a709-14272667e72f",
+          "name": "Hotfix",
+          "category": "Atualização",
+          "version_name": "v3.0",
+          "version_code": 3,
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Hotfix-v3.0",
+          "extension": "zip",
+          "archive_name": "product5-file1-v3.0.zip",
+          "url": "/product5-file1-v3.0.zip"
         },
         {
-          "id": "d57185ba-8e23-4452-b5e8-48972993391f",
-          "name": "Guia-do-usuário",
+          "id": "32f7d6df-5871-4810-aa16-e4f29365f43a",
+          "name": "Patcher",
+          "category": "Atualização",
+          "version_name": "v1.0",
+          "version_code": 1,
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Patcher-v1.0",
+          "extension": "zip",
+          "archive_name": "product5-file2-v1.0.zip",
+          "url": "/product5-file2-v1.0.zip"
+        },
+        {
+          "id": "916342fc-2fb4-4ec9-bd31-853386e37318",
+          "name": "Patcher",
+          "category": "Atualização",
+          "version_name": "v2.0",
+          "version_code": 2,
+          "firmare_effectivity": [
+            "FW-20170229-C",
+            "FW-20150809-C"
+          ],
+          "name_with_version": "Patcher-v2.0",
+          "extension": "zip",
+          "archive_name": "product5-file2-v2.0.zip",
+          "url": "/product5-file2-v2.0.zip"
+        },
+        {
+          "id": "e723044c-2ed0-4723-8707-e0ac4f03106d",
+          "name": "Patcher",
+          "category": "Atualização",
+          "version_name": "v3.0",
+          "version_code": 3,
+          "firmare_effectivity": [
+            "FW-20170229-C",
+            "FW-20150809-C"
+          ],
+          "name_with_version": "Patcher-v3.0",
+          "extension": "zip",
+          "archive_name": "product5-file2-v3.0.zip",
+          "url": "/product5-file2-v3.0.zip"
+        },
+        {
+          "id": "ff7a1d85-5bfb-4143-804c-ecf88f670cb5",
+          "name": "Datasheet",
           "category": "Documentação",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Guia-do-usuário-v1.0",
+          "firmare_effectivity": [
+            "FW-20170229-C"
+          ],
+          "name_with_version": "Datasheet-v1.0",
           "extension": "pdf",
           "archive_name": "product5-file3-v1.0.pdf",
           "url": "/product5-file3-v1.0.pdf"
+        },
+        {
+          "id": "028f42b0-5d18-4d43-812b-7438180966be",
+          "name": "Datasheet",
+          "category": "Documentação",
+          "version_name": "v2.0",
+          "version_code": 2,
+          "firmare_effectivity": [
+            "FW-20170229-C",
+            "FW-20150809-C"
+          ],
+          "name_with_version": "Datasheet-v2.0",
+          "extension": "pdf",
+          "archive_name": "product5-file3-v2.0.pdf",
+          "url": "/product5-file3-v2.0.pdf"
         }
       ]
     },
     {
-      "id": "b1df3a8b-28f6-4b83-b579-6d2e845745ea",
-      "name": "Pinpad - 6",
-      "description": "Essa seção é dedicada à descrição do produto Pinpad - 6.",
-      "category": "Pinpad",
-      "model": "",
-      "image": "pinpad-image.png",
-      "firmare_versions": [],
+      "id": "2d498ac5-6d14-487f-a4ac-98844f50d053",
+      "name": "Impressora - 6",
+      "description": "Essa seção é dedicada à descrição do produto Impressora - 6.",
+      "category": "Impressora",
+      "model": "N98C37",
+      "image": "printer-image.png",
+      "firmare_versions": [
+        "FW-20170229-C",
+        "FW-20170704-D",
+        "FW-20150809-C"
+      ],
       "files": [
         {
-          "id": "b356427b-53d3-4848-bd12-b47826aa3bb0",
-          "name": "Drivers",
-          "category": "Recurso de Desenvolvimento",
-          "version_name": "v1.0",
-          "version_code": 1,
-          "name_with_version": "Drivers-v1.0",
-          "extension": "zip",
-          "archive_name": "product6-file1-v1.0.zip",
-          "url": "/product6-file1-v1.0.zip"
-        },
-        {
-          "id": "11ad0c18-c4a0-4860-a6f3-a5ac075dc98f",
-          "name": "Certificação",
+          "id": "3339f620-f894-4ae3-b4ce-4b6b1bd94c6a",
+          "name": "Norma-B",
           "category": "Outros",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Certificação-v1.0",
+          "firmare_effectivity": [
+            "FW-20150809-C",
+            "FW-20170704-D"
+          ],
+          "name_with_version": "Norma-B-v1.0",
           "extension": "pdf",
-          "archive_name": "product6-file2-v1.0.pdf",
-          "url": "/product6-file2-v1.0.pdf"
+          "archive_name": "product6-file1-v1.0.pdf",
+          "url": "/product6-file1-v1.0.pdf"
         },
         {
-          "id": "bcda41fd-adc7-42c2-a289-25155baede4f",
-          "name": "Certificação",
+          "id": "d0176829-4afd-44e9-a799-c57472498e39",
+          "name": "Norma-B",
           "category": "Outros",
           "version_name": "v2.0",
           "version_code": 2,
-          "name_with_version": "Certificação-v2.0",
+          "firmare_effectivity": [
+            "FW-20170229-C",
+            "FW-20170704-D",
+            "FW-20150809-C"
+          ],
+          "name_with_version": "Norma-B-v2.0",
           "extension": "pdf",
-          "archive_name": "product6-file2-v2.0.pdf",
-          "url": "/product6-file2-v2.0.pdf"
+          "archive_name": "product6-file1-v2.0.pdf",
+          "url": "/product6-file1-v2.0.pdf"
         },
         {
-          "id": "ece19717-83ff-4fe1-b907-e278245617ef",
-          "name": "Manual",
-          "category": "Documentação",
+          "id": "93be7809-28d0-4a9e-ae01-550df37e4023",
+          "name": "Norma-B",
+          "category": "Outros",
+          "version_name": "v3.0",
+          "version_code": 3,
+          "firmare_effectivity": [
+            "FW-20170704-D",
+            "FW-20170229-C",
+            "FW-20150809-C"
+          ],
+          "name_with_version": "Norma-B-v3.0",
+          "extension": "pdf",
+          "archive_name": "product6-file1-v3.0.pdf",
+          "url": "/product6-file1-v3.0.pdf"
+        },
+        {
+          "id": "37a4cb60-fed9-4961-91c8-2a5452d0a56d",
+          "name": "Exemplos-de-uso",
+          "category": "Recurso de Desenvolvimento",
           "version_name": "v1.0",
           "version_code": 1,
-          "name_with_version": "Manual-v1.0",
-          "extension": "pdf",
-          "archive_name": "product6-file3-v1.0.pdf",
-          "url": "/product6-file3-v1.0.pdf"
+          "firmare_effectivity": [
+            "FW-20170704-D",
+            "FW-20170229-C",
+            "FW-20150809-C"
+          ],
+          "name_with_version": "Exemplos-de-uso-v1.0",
+          "extension": "zip",
+          "archive_name": "product6-file2-v1.0.zip",
+          "url": "/product6-file2-v1.0.zip"
+        },
+        {
+          "id": "d72b1e00-5177-49ff-ad34-bf4f13bc2de8",
+          "name": "Exemplos-de-uso",
+          "category": "Recurso de Desenvolvimento",
+          "version_name": "v2.0",
+          "version_code": 2,
+          "firmare_effectivity": [
+            "FW-20150809-C"
+          ],
+          "name_with_version": "Exemplos-de-uso-v2.0",
+          "extension": "zip",
+          "archive_name": "product6-file2-v2.0.zip",
+          "url": "/product6-file2-v2.0.zip"
+        },
+        {
+          "id": "32e2428a-ff52-4aae-b03e-21f87e835ad6",
+          "name": "SDK",
+          "category": "Recurso de Desenvolvimento",
+          "version_name": "v1.0",
+          "version_code": 1,
+          "firmare_effectivity": [
+            "FW-20150809-C",
+            "FW-20170704-D"
+          ],
+          "name_with_version": "SDK-v1.0",
+          "extension": "zip",
+          "archive_name": "product6-file3-v1.0.zip",
+          "url": "/product6-file3-v1.0.zip"
         }
       ]
     }
