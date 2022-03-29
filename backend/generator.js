@@ -23,7 +23,14 @@ const PRODUCT_IMAGES = [
 
 const PRODUCT_FILE_FOLDER = 'C:\\proj-sw-dev\\igti\\pa-fst\\react-developers-portal\\frontend\\public\\files\\products';
 
-const FILE_CATEGORIES = ['Documentação', 'Recurso de Desenvolvimento', 'Atualizador', 'Outros'];
+const FILE_CATEGORIES = ['Documentação', 'Recurso de Desenvolvimento', 'Atualização', 'Outros'];
+
+const FILE_NAMES = [
+  ['Manual', 'Guia-do-usuário', 'Datasheet'],
+  ['SDK', 'Drivers', 'Exemplos-de-uso', 'Apps-demo', 'Tools', 'Image-pack'],
+  ['Atualizador', 'Patcher', 'Hotfix'],
+  ['Catálogo', 'Norma-A', 'Norma-B', 'Certificação'],
+];
 
 const FILE_EXTS = ['pdf', 'zip', 'zip', 'pdf'];
 
@@ -41,12 +48,12 @@ async function start() {
     const product = `product${i + 1}`;
     const productCategoryNumber = getRandomNumber(0, PRODUCT_CATEGORIES.length - 1);
     const productCategory = PRODUCT_CATEGORIES[productCategoryNumber];
-    const productName = `${productCategory} ${i + 1}`;
+    const productName = `${productCategory} - ${i + 1}`;
 
     products.push({
       id: uuid(),
       name: productName,
-      description: `Descrição de ${productName}.`,
+      description: `Essa seção é dedicada à descrição do produto ${productName}.`,
       category: productCategory,
       model: '',
       image: `${PRODUCT_IMAGES[productCategoryNumber]}.png`,
@@ -54,18 +61,23 @@ async function start() {
       files: [],
     });
 
+    const currFileNamesMatrix = FILE_NAMES.map((row) => [...row]);
+
     for (let j = 0; j < 3; j++) {
       const file = `file${j + 1}`;
       const fileCategoryNumber = getRandomNumber(0, FILE_CATEGORIES.length - 1);
       const fileCategory = FILE_CATEGORIES[fileCategoryNumber];
       const fileExt = FILE_EXTS[fileCategoryNumber];
-      const fileName = `Arquivo ${j + 1}`;
+      const fileNameNumber = getRandomNumber(0, currFileNamesMatrix[fileCategoryNumber].length - 1);
+      const fileName = currFileNamesMatrix[fileCategoryNumber][fileNameNumber];
+      currFileNamesMatrix[fileCategoryNumber].splice(fileNameNumber, 1);
+
       const numberOfVersions = getRandomNumber(1, 3);
 
       for (let k = 0; k < numberOfVersions; k++) {
         const versionCode = k + 1;
-        const versionName = 'v' + versionCode;
-        const fileNameWithVersion = `Arquivo ${j + 1} - ${versionName}`;
+        const versionName = 'v' + versionCode + '.0';
+        const fileNameWithVersion = `${fileName}-${versionName}`;
         const fileArchiveName = `${product}-${file}-${versionName}.${fileExt}`;
 
         fs.writeFile(PRODUCT_FILE_FOLDER + '/' + fileArchiveName, 'Dummy file');
