@@ -73,7 +73,7 @@ export default function ProductPage() {
           const arrayOfGroupedFilesByName = groupBy(arrayOfFilteredFilesByFirmwareVersion, 'name');
           const arrayOfFilteredFilesByFileVersion = [];
 
-          for (const [_key, value] of Object.entries(arrayOfGroupedFilesByName)) {
+          for (const [, value] of Object.entries(arrayOfGroupedFilesByName)) {
             const max = value.reduce(function (prev, current) {
               return prev.version_code > current.version_code ? prev : current;
             });
@@ -90,7 +90,7 @@ export default function ProductPage() {
     }
 
     getProductWithFilteredFiles();
-  }, [selectedFirmwareVersion, selectedFilesVersion]);
+  }, [selectedFirmwareVersion, selectedFilesVersion, product]);
 
   const handleFirmwareVersionChange = (newSelectedFirmwareVersion) => {
     setSelectedFirmwareVersion(newSelectedFirmwareVersion);
