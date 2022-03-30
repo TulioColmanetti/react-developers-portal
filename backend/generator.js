@@ -85,7 +85,7 @@ async function start() {
   const products = [];
 
   // Generate products
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 10; i++) {
     const product = `product${i + 1}`;
     const productCategoryNumber = getRandomNumber(0, PRODUCT_CATEGORIES.length - 1);
     const productCategory = PRODUCT_CATEGORIES[productCategoryNumber];
@@ -105,46 +105,59 @@ async function start() {
     });
 
     // Generate firmwares for products
-    const currFirmwareArray = randomPickFromArray(PRODUCT_FIRMWARES);
+    const currFirmwareArray = randomPicksFromArrayNoRepetition(PRODUCT_FIRMWARES);
     products[i].firmare_versions = currFirmwareArray;
 
     // Generate files for products
     const currFileNamesMatrix = FILE_NAMES.map((row) => [...row]);
 
-    for (let j = 0; j < 3; j++) {
+    // Generate random amount of categories with no repetition (from 0 to array length - 1)
+    const currFileCategoryNumberList = randomPicksFromArrayNoRepetition([...Array(FILE_CATEGORIES.length).keys()]);
+    // for (let j = 0; j < 3; j++) {
+    for (let j = 0; j < currFileCategoryNumberList.length; j++) {
       const file = `file${j + 1}`;
-      const fileCategoryNumber = getRandomNumber(0, FILE_CATEGORIES.length - 1);
+      // const fileCategoryNumber = getRandomNumber(0, FILE_CATEGORIES.length - 1);
+      const fileCategoryNumber = currFileCategoryNumberList[j];
       const fileCategory = FILE_CATEGORIES[fileCategoryNumber];
       const fileExt = FILE_EXTS[fileCategoryNumber];
-      const fileNameNumber = getRandomNumber(0, currFileNamesMatrix[fileCategoryNumber].length - 1);
-      const fileName = currFileNamesMatrix[fileCategoryNumber][fileNameNumber];
-      currFileNamesMatrix[fileCategoryNumber].splice(fileNameNumber, 1);
 
-      const numberOfVersions = getRandomNumber(1, 3);
+      // Generate random amount of files of chosen category with no repetition (from 0 to array length - 1)
+      const currFileNameNumberList = randomPicksFromArrayNoRepetition([
+        ...Array(currFileNamesMatrix[fileCategoryNumber].length).keys(),
+      ]);
+      for (let k = 0; k < currFileNameNumberList.length; k++) {
+        // const fileNameNumber = getRandomNumber(0, currFileNamesMatrix[fileCategoryNumber].length - 1);
+        const fileNameNumber = currFileNameNumberList[k];
+        const fileName = currFileNamesMatrix[fileCategoryNumber][fileNameNumber];
+        // currFileNamesMatrix[fileCategoryNumber].splice(fileNameNumber, 1);
 
-      // Generate versions for files
-      for (let k = 0; k < numberOfVersions; k++) {
-        const versionCode = k + 1;
-        const versionName = 'v' + versionCode + '.0';
-        const fileNameWithVersion = `${fileName}-${versionName}`;
-        const fileArchiveName = `${product}-${file}-${versionName}.${fileExt}`;
+        const numberOfVersions = getRandomNumber(1, 3);
 
-        const firmareEffectivity = randomPickFromArray(currFirmwareArray);
+        // Generate versions for files
+        // for (let l = 0; l < numberOfVersions; l++) {
+        for (let l = numberOfVersions - 1; l >= 0; l--) {
+          const versionCode = l + 1;
+          const versionName = 'v' + versionCode + '.0';
+          const fileNameWithVersion = `${fileName}-${versionName}`;
+          const fileArchiveName = `${product}-${file}-${versionName}.${fileExt}`;
 
-        fs.writeFile(PRODUCT_FILE_FOLDER + '/' + fileArchiveName, 'Dummy file');
+          const firmareEffectivity = randomPicksFromArrayNoRepetition(currFirmwareArray);
 
-        products[i].files.push({
-          id: uuid(),
-          name: fileName,
-          category: fileCategory,
-          version_name: versionName,
-          version_code: versionCode,
-          firmare_effectivity: firmareEffectivity,
-          name_with_version: fileNameWithVersion,
-          extension: fileExt,
-          archive_name: fileArchiveName,
-          url: `/${fileArchiveName}`,
-        });
+          fs.writeFile(PRODUCT_FILE_FOLDER + '/' + fileArchiveName, 'Dummy file');
+
+          products[i].files.push({
+            id: uuid(),
+            name: fileName,
+            category: fileCategory,
+            version_name: versionName,
+            version_code: versionCode,
+            firmare_effectivity: firmareEffectivity,
+            name_with_version: fileNameWithVersion,
+            extension: fileExt,
+            archive_name: fileArchiveName,
+            url: `/${fileArchiveName}`,
+          });
+        }
       }
     }
   }
@@ -226,7 +239,7 @@ async function start() {
   // );
 }
 
-function randomPickFromArray(array) {
+function randomPicksFromArrayNoRepetition(array) {
   const copyArray = Object.assign([], array);
   const numberOfPicks = getRandomNumber(1, copyArray.length);
   const newArray = [];
