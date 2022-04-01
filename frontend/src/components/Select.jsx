@@ -28,7 +28,7 @@ export default function Select({
 
       <select
         id={id}
-        className="p-1 bg-gray-100 shadow-md rounded-lg"
+        className="p-1 bg-gray-100 shadow-md rounded-lg hover:cursor-pointer"
         value={selectedValue.id}
         onChange={handleSelectChange}
       >
