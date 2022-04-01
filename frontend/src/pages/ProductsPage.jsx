@@ -11,8 +11,6 @@ export default function ProductsPage() {
   useEffect(() => {
     async function getProducts() {
       const apiProducts = await apiGetAllProducts();
-      // .sort((a, b) => a.name.localeCompare(b.name));
-      // .map((city) => ({ ...city, description: city.name }));
 
       setProducts(apiProducts);
 
@@ -32,10 +30,9 @@ export default function ProductsPage() {
 
   if (!loading) {
     mainJsx = (
-      <div className="grid grid-cols-3 gap-6 mx-auto">
-        {products.map(({ id, name, description, image }) => {
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-auto">
+        {products.map(({ id, name, image }) => {
           const path = '/products/';
-          // const dataPath = 'data/products/product1/';
           return (
             <NavLink
               key={id}

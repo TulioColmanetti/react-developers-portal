@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col space-y-2 p-4">
       <h3 className="text-center font-semibold mb-6">Seja bem-vindo(a) ao Portal para Desenvolvedores!</h3>
-      <div className="grid grid-cols-3 gap-6 mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mx-auto">
         {APP_ROUTES.map(({ id, path, description, icon }) => {
           return (
             icon && (
