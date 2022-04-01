@@ -1,4 +1,4 @@
-import { idServiceGetNewId } from '../services/idService';
+import { idServiceGetNewId } from '../../services/idService';
 
 const DEFAULT_OPTIONS = [
   { id: 'op1', description: 'Opção 1' },

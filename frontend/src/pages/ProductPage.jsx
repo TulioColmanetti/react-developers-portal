@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Loading from '../components/Loading';
-import Error from '../components/Error';
 import { apiGetProductFrom } from '../services/apiService';
-import Select from '../components/Select';
-import FilesCollapsible from '../components/FilesCollapsible';
-
-const PRODUCT_IMAGES_FOLDER = '/img/products/';
+import Loading from '../components/common/Loading';
+import Error from '../components/common/Error';
+import ProductTitle from '../components/products/ProductTitle';
+import ProductCard from '../components/products/ProductCard';
+import ProductHeader from '../components/products/ProductHeader';
+import ProductImage from '../components/products/ProductImage';
+import ProductDetailsContainer from '../components/products/ProductDetailsContainer';
+import ProductInfo from '../components/products/ProductInfo';
+import Select from '../components/common/Select';
+import FilesCollapsibleContainer from '../components/common/FilesCollapsibleContainer';
+import FilesCollapsible from '../components/common/FilesCollapsible';
 
 export default function ProductPage() {
   const { id: productId } = useParams();
@@ -102,62 +107,56 @@ export default function ProductPage() {
   );
 
   if (error) {
-    mainJsx = <Error>{error}</Error>;
+    mainJsx = (
+      <div className="flex justify-center my-4">
+        <Error>{error}</Error>
+      </div>
+    );
   }
 
   if (!loading && !error) {
     mainJsx = (
-      <>
-        <h3 className="text-xl text-center font-semibold mb-6">{filteredProduct.name}</h3>
-        <div className="max-w-2xl mx-auto p-4 bg-gray-200 rounded-lg shadow-md">
-          <div className="flex flex-row mx-auto items-center space-x-4 mb-2">
-            <img src={PRODUCT_IMAGES_FOLDER + filteredProduct.image} alt="" className="h-48 m-4" />
-            <div className="flex flex-col space-y-4 p-2">
-              <p>{filteredProduct.description}</p>
-              <p>
-                <span className="font-semibold">Categoria: </span>
-                {filteredProduct.category}
-              </p>
-              <p>
-                <span className="font-semibold">Modelo: </span>
-                {filteredProduct.model}
-              </p>
-              <Select
-                labelDescription="Versão de Firmware: "
-                onChangeValue={handleFirmwareVersionChange}
-                selectedValue={selectedFirmwareVersion}
-              >
-                {filteredProduct.firmare_versions.map((firm) => {
-                  return { id: firm, description: firm };
-                })}
-              </Select>
-              <Select
-                labelDescription="Versão dos Arquivos: "
-                onChangeValue={handleFilesVersionChange}
-                selectedValue={selectedFilesVersion}
-              >
-                {[
-                  { id: 'op1', description: 'Todas' },
-                  { id: 'op2', description: 'Mais recente' },
-                ]}
-              </Select>
-            </div>
-          </div>
-          <div className="flex flex-col space-y-2">
-            <FilesCollapsible triggerTitleName="Documentação">
-              {filteredProduct.files.filter((file) => file.category === 'Documentação')}
-            </FilesCollapsible>
-            <FilesCollapsible triggerTitleName="Recursos de Desenvolvimento">
-              {filteredProduct.files.filter((file) => file.category === 'Recursos de Desenvolvimento')}
-            </FilesCollapsible>
-            <FilesCollapsible triggerTitleName="Outros">
-              {filteredProduct.files.filter((file) => file.category === 'Outros')}
-            </FilesCollapsible>
-          </div>
-        </div>
-      </>
+      <ProductCard>
+        <ProductTitle title={filteredProduct.name} />
+        <ProductHeader>
+          <ProductImage image={filteredProduct.image} />
+          <ProductDetailsContainer>
+            <ProductInfo product={filteredProduct} />
+            <Select
+              labelDescription="Versão de Firmware: "
+              onChangeValue={handleFirmwareVersionChange}
+              selectedValue={selectedFirmwareVersion}
+            >
+              {filteredProduct.firmare_versions.map((firm) => {
+                return { id: firm, description: firm };
+              })}
+            </Select>
+            <Select
+              labelDescription="Versão dos Arquivos: "
+              onChangeValue={handleFilesVersionChange}
+              selectedValue={selectedFilesVersion}
+            >
+              {[
+                { id: 'op1', description: 'Todas' },
+                { id: 'op2', description: 'Mais recente' },
+              ]}
+            </Select>
+          </ProductDetailsContainer>
+        </ProductHeader>
+        <FilesCollapsibleContainer>
+          <FilesCollapsible triggerTitleName="Documentação">
+            {filteredProduct.files.filter((file) => file.category === 'Documentação')}
+          </FilesCollapsible>
+          <FilesCollapsible triggerTitleName="Recursos de Desenvolvimento">
+            {filteredProduct.files.filter((file) => file.category === 'Recursos de Desenvolvimento')}
+          </FilesCollapsible>
+          <FilesCollapsible triggerTitleName="Outros">
+            {filteredProduct.files.filter((file) => file.category === 'Outros')}
+          </FilesCollapsible>
+        </FilesCollapsibleContainer>
+      </ProductCard>
     );
   }
 
-  return <div className="flex flex-col space-y-2 p-4">{mainJsx}</div>;
+  return <>{mainJsx}</>;
 }
