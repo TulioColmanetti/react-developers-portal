@@ -63,7 +63,7 @@ const PRODUCT_FIRMWARES = [
 
 const PRODUCT_FILE_FOLDER = 'C:\\proj-sw-dev\\igti\\pa-fst\\react-developers-portal\\frontend\\public\\files\\products';
 
-const FILE_CATEGORIES = ['Documentação', 'Recurso de Desenvolvimento', 'Atualização', 'Outros'];
+const FILE_CATEGORIES = ['Documentação', 'Recursos de Desenvolvimento', 'Atualização', 'Outros'];
 
 const FILE_NAMES = [
   ['Manual', 'Guia-do-usuário', 'Datasheet'],
@@ -85,7 +85,7 @@ async function start() {
   const products = [];
 
   // Generate products
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 20; i++) {
     const product = `product${i + 1}`;
     const productCategoryNumber = getRandomNumber(0, PRODUCT_CATEGORIES.length - 1);
     const productCategory = PRODUCT_CATEGORIES[productCategoryNumber];
@@ -96,7 +96,7 @@ async function start() {
     products.push({
       id: uuid(),
       name: productName,
-      description: `Essa seção é dedicada à descrição do produto ${productName}.`,
+      description: `Esta página contém todos os recursos necessários ao desenvolvimento e/ou integração de aplicações com o produto ${productName}.`,
       category: productCategory,
       model: productModel,
       image: `${PRODUCT_IMAGES[productCategoryNumber]}.png`,
@@ -112,7 +112,9 @@ async function start() {
     const currFileNamesMatrix = FILE_NAMES.map((row) => [...row]);
 
     // Generate random amount of categories with no repetition (from 0 to array length - 1)
-    const currFileCategoryNumberList = randomPicksFromArrayNoRepetition([...Array(FILE_CATEGORIES.length).keys()]);
+    // const currFileCategoryNumberList = randomPicksFromArrayNoRepetition([...Array(FILE_CATEGORIES.length).keys()]);
+    // Generate index list with all categories and no repetition (from 0 to array length - 1)
+    const currFileCategoryNumberList = [...Array(FILE_CATEGORIES.length).keys()];
     // for (let j = 0; j < 3; j++) {
     for (let j = 0; j < currFileCategoryNumberList.length; j++) {
       const file = `file${j + 1}`;
@@ -172,71 +174,6 @@ async function start() {
       2
     )
   );
-
-  // const candidates = [];
-  // const cities = [];
-  // const election = [];
-  // for (const candidate of CANDIDATE_NAMES) {
-  //   candidates.push({
-  //     id: uuid(),
-  //     name: candidate,
-  //     username: candidate.toLowerCase(),
-  //   });
-  // }
-  // for (const city of CITY_NAMES) {
-  //   const votingPopulation = getRandomNumber(1_000_000, 2_000_000);
-  //   // prettier-ignore
-  //   const absence =
-  //     Math.floor((votingPopulation * getRandomNumber(5, 10)) / 100);
-  //   const presence = votingPopulation - absence;
-  //   cities.push({
-  //     id: uuid(),
-  //     name: city,
-  //     votingPopulation,
-  //     absence,
-  //     presence,
-  //   });
-  // }
-  // for (const city of cities) {
-  //   let remainingVotes = city.presence;
-  //   for (const candidate of candidates) {
-  //     const willRunElection = getRandomNumber(1, 2) === 2;
-  //     if (!willRunElection) {
-  //       continue;
-  //     }
-  //     const percentage = getRandomNumber(10, 20) / 100;
-  //     const votes = Math.floor(remainingVotes * percentage);
-  //     remainingVotes -= Math.max(0, votes);
-  //     election.push({
-  //       id: uuid(),
-  //       cityId: city.id,
-  //       candidateId: candidate.id,
-  //       votes,
-  //     });
-  //   }
-  //   election[election.length - 1].votes += remainingVotes;
-  //   // cities.push({
-  //   //   id: uuid(),
-  //   //   city: { name: city, votingPopulation, absence },
-  //   //   candidates,
-  //   // });
-  // }
-  // // for (const city of cities) {
-  // //   console.log(city.city.votingPopulation - city.city.absence);
-  // //   console.log(city.candidates.reduce((ac, { votes }) => ac + votes, 0));
-  // // }
-  // fs.writeFile(
-  //   './api.json',
-  //   JSON.stringify(
-  //     {
-  //       cities: cities.sort((a, b) => a.id.localeCompare(b.id)),
-  //       candidates: candidates.sort((a, b) => a.id.localeCompare(b.id)),
-  //       election: election.sort((a, b) => a.id.localeCompare(b.id)),
-  //     },
-  //     null,
-  //     2
-  //   )
-  // );
 }
 
 function randomPicksFromArrayNoRepetition(array) {
