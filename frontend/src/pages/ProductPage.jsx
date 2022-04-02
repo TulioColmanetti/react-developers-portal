@@ -2,17 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { apiGetProductFrom } from '../services/apiService';
-import Loading from '../components/common/Loading';
-import Error from '../components/common/Error';
+import Loading from '../components/utils/Loading';
+import Error from '../components/utils/Error';
 import ProductTitle from '../components/products/ProductTitle';
 import ProductCard from '../components/products/ProductCard';
 import ProductHeader from '../components/products/ProductHeader';
 import ProductImage from '../components/products/ProductImage';
 import ProductDetailsContainer from '../components/products/ProductDetailsContainer';
 import ProductInfo from '../components/products/ProductInfo';
-import Select from '../components/common/Select';
-import FilesCollapsibleContainer from '../components/common/FilesCollapsibleContainer';
-import FilesCollapsible from '../components/common/FilesCollapsible';
+import Select from '../components/utils/Select';
+import FilesCollapsibleContainer from '../components/utils/FilesCollapsibleContainer';
+import FilesCollapsible from '../components/utils/FilesCollapsible';
 
 export default function ProductPage() {
   const { id: productId } = useParams();

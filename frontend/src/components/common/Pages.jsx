@@ -1,6 +1,6 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { APP_ROUTES } from '../services/routeService';
+import { APP_ROUTES } from '../../services/routeService';
 
 export default function Pages() {
   return (

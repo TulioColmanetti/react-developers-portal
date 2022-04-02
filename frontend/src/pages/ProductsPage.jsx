@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import Loading from '../components/common/Loading';
+import Loading from '../components/utils/Loading';
 import { apiGetAllProducts } from '../services/apiService';
 
 export default function ProductsPage() {

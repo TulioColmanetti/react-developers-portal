@@ -1,9 +1,9 @@
 import { BrowserRouter } from 'react-router-dom';
 
-import Header from './components/Header';
-import Routes from './components/Routes';
-import Main from './components/Main';
-import Pages from './components/Pages';
+import Header from './components/common/Header';
+import Routes from './components/common/Routes';
+import Main from './components/common/Main';
+import Pages from './components/common/Pages';
 
 export default function App() {
   return (

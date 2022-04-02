@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function ProductTitle({ title }) {
-  return <h3 className="text-xl text-center font-semibold mb-4">{title}</h3>;
+  return <h3 className="text-xl text-center font-semibold pb-2 mb-2 border-b-2 border-gray-300">{title}</h3>;
 }
