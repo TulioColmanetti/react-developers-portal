@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import Loading from '../components/utils/Loading';
 import { apiGetAllProducts } from '../services/apiService';
 
+const PRODUCT_IMAGES_FOLDER = '/img/products/';
+
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -41,7 +43,7 @@ export default function ProductsPage() {
               className="w-56 p-4 bg-gray-200 rounded-lg shadow-md hover:text-yellow-500 hover:scale-105"
             >
               <div className="flex flex-col items-center space-y-1">
-                <img src={'/img/products/' + image} alt="" className="h-24 m-4" />
+                <img src={PRODUCT_IMAGES_FOLDER + image} alt="" className="h-24 m-4" />
                 <span className="text-center font-semibold">{name}</span>
               </div>
             </NavLink>
