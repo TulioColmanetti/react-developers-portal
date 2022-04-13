@@ -17,9 +17,7 @@ export default function ProductsPage() {
 
       setProducts(apiProducts);
 
-      setTimeout(() => {
-        setLoading(false);
-      }, 500);
+      setLoading(false);
     }
 
     getProducts();

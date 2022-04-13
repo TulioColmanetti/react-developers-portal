@@ -37,14 +37,11 @@ export default function ProductPage() {
           // op1 = "Todas"
           setSelectedFilesVersion('op1');
         } else setError('Produto não encontrado!');
-
-        setTimeout(() => {
-          setLoading(false);
-        }, 500);
       } catch (error) {
-        setLoading(false);
         setError(error.message);
       }
+
+      setLoading(false);
     }
 
     getProduct();
