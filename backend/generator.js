@@ -114,9 +114,9 @@ const SERVICE_FILE_NAMES = [
 
 const SERVICE_FILE_EXTS = ['pdf', 'zip'];
 
-const SERVICE_DOC_TYPE = ['Swagger'];
+const SERVICE_TEST_TYPE = ['Swagger'];
 
-const SERVICE_DOC_LINK = ['https://petstore.swagger.io/'];
+const SERVICE_TEST_LINK = ['https://petstore.swagger.io/'];
 
 //---------------- Products implementation ----------------//
 
@@ -224,7 +224,7 @@ function generateServices() {
       description: `Esta página contém todos os recursos necessários ao desenvolvimento e/ou integração de aplicações com o serviço de ${serviceName}.`,
       category: serviceCategory,
       image: `${SERVICE_IMAGES[serviceCategoryNumber]}.png`,
-      documentation: { type: SERVICE_DOC_TYPE[0], link: SERVICE_DOC_LINK[0] },
+      test: { type: SERVICE_TEST_TYPE[0], link: SERVICE_TEST_LINK[0] },
       files: [],
     });
 
