@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Collapsible from 'react-collapsible';
-import { BsChevronDown } from 'react-icons/bs';
 
 import { apiGetServiceFrom } from '../services/apiService';
 import Loading from '../components/utils/Loading';
@@ -15,6 +13,7 @@ import ServiceInfo from '../components/services/ServiceInfo';
 import Select from '../components/utils/Select';
 import FilesCollapsibleContainer from '../components/utils/FilesCollapsibleContainer';
 import FilesCollapsible from '../components/utils/FilesCollapsible';
+import IframeCollapsible from '../components/utils/IframeCollapsible';
 
 const SERVICE_FILES_FOLDER = '/files/services/';
 
@@ -129,47 +128,14 @@ export default function ServicePage() {
           <FilesCollapsible triggerTitleName="Recursos de Desenvolvimento" filesFolder={SERVICE_FILES_FOLDER}>
             {filteredService.files.filter((file) => file.category === 'Recursos de Desenvolvimento')}
           </FilesCollapsible>
-          <Collapsible
-            trigger={
-              <>
-                <p className="font-semibold">Área de Testes com {filteredService.test.type}</p>
-                <BsChevronDown size="1.1rem" />
-              </>
-            }
-            transitionTime="200"
-            triggerClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-lg shadow-md"
-            triggerOpenedClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-t-lg"
-            contentInnerClassName="p-2 rounded-b-lg bg-gray-100"
-            contentOuterClassName="shadow-md"
-          >
-            <iframe
-              src={filteredService.test.link}
-              name="iframe_a"
-              className="h-screen w-full"
-              title="Service Testing"
-            ></iframe>
-          </Collapsible>
+          <IframeCollapsible
+            triggerTitleName={'Área de Testes com ' + filteredService.test.type}
+            iframeSrcUrl={filteredService.test.link}
+          />
         </FilesCollapsibleContainer>
       </ServiceCard>
     );
   }
 
   return <>{mainJsx}</>;
-
-  // <div className="w-full lg:w-3/5 mx-auto">
-  /* <p>
-    <a href="https://petstore.swagger.io/" target="iframe_a">
-      Swagger
-    </a>
-  </p> */
-  /* <iframe
-    src="demo.htm"
-    name="iframe_a"
-    className="h-screen rounded-lg shadow-lg"
-    // style={{ border: 'none', height: '480px', width: '640px' }}
-    title="Iframe Example"
-  ></iframe> */
-  /* <iframe src="https://www.youtube.com/embed/cWDJoK8zw58" sandbox="" /> */
-  /* <iframe src="https://www.youtube.com/embed/cWDJoK8zw58" /> */
-  // </div>
 }
