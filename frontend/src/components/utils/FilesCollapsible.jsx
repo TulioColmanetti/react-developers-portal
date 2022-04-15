@@ -5,9 +5,7 @@ import { AiOutlineFileUnknown as FileUnknownIcon } from 'react-icons/ai';
 import Collapsible from 'react-collapsible';
 import { BsChevronDown } from 'react-icons/bs';
 
-const PRODUCT_FILES_FOLDER = '/files/products/';
-
-export default function FilesCollapsible({ triggerTitleName = 'Arquivos', children: files = [] }) {
+export default function FilesCollapsible({ triggerTitleName = 'Arquivos', filesFolder = '/', children: files = [] }) {
   return (
     <Collapsible
       trigger={
@@ -27,7 +25,7 @@ export default function FilesCollapsible({ triggerTitleName = 'Arquivos', childr
           return (
             <a
               key={id}
-              href={PRODUCT_FILES_FOLDER + archive_name}
+              href={filesFolder + archive_name}
               target="_blank"
               rel="noreferrer"
               className="flex flex-col items-center space-y-1 hover:text-yellow-500 hover:scale-105"

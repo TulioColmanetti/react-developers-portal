@@ -14,6 +14,8 @@ import Select from '../components/utils/Select';
 import FilesCollapsibleContainer from '../components/utils/FilesCollapsibleContainer';
 import FilesCollapsible from '../components/utils/FilesCollapsible';
 
+const PRODUCT_FILES_FOLDER = '/files/products/';
+
 export default function ProductPage() {
   const { id: productId } = useParams();
   const [product, setProduct] = useState(null);
@@ -141,13 +143,13 @@ export default function ProductPage() {
           </ProductDetailsContainer>
         </ProductHeader>
         <FilesCollapsibleContainer>
-          <FilesCollapsible triggerTitleName="Documentação">
+          <FilesCollapsible triggerTitleName="Documentação" filesFolder={PRODUCT_FILES_FOLDER}>
             {filteredProduct.files.filter((file) => file.category === 'Documentação')}
           </FilesCollapsible>
-          <FilesCollapsible triggerTitleName="Recursos de Desenvolvimento">
+          <FilesCollapsible triggerTitleName="Recursos de Desenvolvimento" filesFolder={PRODUCT_FILES_FOLDER}>
             {filteredProduct.files.filter((file) => file.category === 'Recursos de Desenvolvimento')}
           </FilesCollapsible>
-          <FilesCollapsible triggerTitleName="Outros">
+          <FilesCollapsible triggerTitleName="Outros" filesFolder={PRODUCT_FILES_FOLDER}>
             {filteredProduct.files.filter((file) => file.category === 'Outros')}
           </FilesCollapsible>
         </FilesCollapsibleContainer>
