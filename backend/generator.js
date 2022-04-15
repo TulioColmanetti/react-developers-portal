@@ -90,9 +90,18 @@ const SERVICE_CATEGORIES = [
   'Consulta de Dados',
   'Coleta de Dados de Produto',
   'Teste de Aplicativos',
+  'Atualização Online',
+  'Consulta de Relatórios',
 ];
 
-const SERVICE_IMAGES = ['smartphone-image', 'smart-tv-image', 'smartwatch-image', 'printer-image'];
+const SERVICE_IMAGES = [
+  'file-processing-image',
+  'data-query-image',
+  'product-data-collection-image',
+  'app-testing-image',
+  'online-update-image',
+  'report-query-image',
+];
 
 const SERVICE_FILE_FOLDER = FILE_FOLDER + 'services';
 
@@ -203,7 +212,7 @@ function generateServices() {
   const services = [];
 
   // Generate services
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 16; i++) {
     const service = `service${i + 1}`;
     const serviceCategoryNumber = getRandomNumber(0, SERVICE_CATEGORIES.length - 1);
     const serviceCategory = SERVICE_CATEGORIES[serviceCategoryNumber];
