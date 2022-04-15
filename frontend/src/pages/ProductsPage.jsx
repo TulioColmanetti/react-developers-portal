@@ -5,7 +5,7 @@ import Loading from '../components/utils/Loading';
 import { apiGetAllProducts } from '../services/apiService';
 
 const PRODUCT_PATH = '/products/';
-const PRODUCT_IMAGES_FOLDER = '/img/products/';
+const PRODUCT_IMAGES_FOLDER = '/img' + PRODUCT_PATH;
 
 export default function ProductsPage() {
   const [products, setProducts] = useState([]);
