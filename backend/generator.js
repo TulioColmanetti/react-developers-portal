@@ -109,7 +109,7 @@ const SERVICE_FILE_CATEGORIES = ['Documentação', 'Recursos de Desenvolvimento'
 
 const SERVICE_FILE_NAMES = [
   ['Manual', 'Guia-do-usuário'],
-  ['Postman-Collection', 'Insomnia-Collection', 'Paw-Project'],
+  ['Postman-Collection', 'Insomnia-Collection', 'Paw-Project', 'Exemplos-de-uso', 'Apps-demo'],
 ];
 
 const SERVICE_FILE_EXTS = ['pdf', 'zip'];
