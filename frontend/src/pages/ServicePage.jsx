@@ -6,13 +6,23 @@ import { BsChevronDown } from 'react-icons/bs';
 import { apiGetServiceFrom } from '../services/apiService';
 import Loading from '../components/utils/Loading';
 import Error from '../components/utils/Error';
+import ServiceTitle from '../components/services/ServiceTitle';
+import ServiceCard from '../components/services/ServiceCard';
+import ServiceHeader from '../components/services/ServiceHeader';
+import ServiceImage from '../components/services/ServiceImage';
+import ServiceDetailsContainer from '../components/services/ServiceDetailsContainer';
+import ServiceInfo from '../components/services/ServiceInfo';
+import Select from '../components/utils/Select';
+import FilesCollapsibleContainer from '../components/utils/FilesCollapsibleContainer';
+import FilesCollapsible from '../components/utils/FilesCollapsible';
+
+const SERVICE_FILES_FOLDER = '/files/services/';
 
 export default function ServicePage() {
   const { id: serviceId } = useParams();
-  // const [product, setProduct] = useState(null);
-  // const [filteredProduct, setFilteredProduct] = useState(null);
-  // const [selectedFirmwareVersion, setSelectedFirmwareVersion] = useState('');
-  // const [selectedFilesVersion, setSelectedFilesVersion] = useState('');
+  const [service, setService] = useState(null);
+  const [filteredService, setFilteredService] = useState(null);
+  const [selectedFilesVersion, setSelectedFilesVersion] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -23,12 +33,11 @@ export default function ServicePage() {
         // .sort((a, b) => a.name.localeCompare(b.name));
 
         if (apiService && apiService.length > 0) {
-          // const currentProduct = apiService[0];
-          // setProduct(currentProduct);
-          // setFilteredProduct(Object.assign({}, currentProduct));
-          // setSelectedFirmwareVersion(currentProduct.firmare_versions[0]);
-          // // op1 = "Todas"
-          // setSelectedFilesVersion('op1');
+          const currentService = apiService[0];
+          setService(currentService);
+          setFilteredService(Object.assign({}, currentService));
+          // op1 = "Todas"
+          setSelectedFilesVersion('op1');
         } else setError('Serviço não encontrado!');
       } catch (error) {
         setError(error.message);
@@ -39,6 +48,45 @@ export default function ServicePage() {
 
     getService();
   }, [serviceId]);
+
+  useEffect(() => {
+    async function getServiceWithFilteredFiles() {
+      if (service) {
+        const serviceWithFilteredFiles = Object.assign({}, service);
+        const arrayOfServiceFiles = Object.assign([], service.files);
+
+        // Filter files by file version (op2 = "Mais recente")
+        if (selectedFilesVersion === 'op2') {
+          const groupBy = function (xs, key) {
+            return xs.reduce(function (rv, x) {
+              (rv[x[key]] = rv[x[key]] || []).push(x);
+              return rv;
+            }, {});
+          };
+
+          const arrayOfGroupedFilesByName = groupBy(arrayOfServiceFiles, 'name');
+          const arrayOfFilteredFilesByFileVersion = [];
+
+          for (const [, value] of Object.entries(arrayOfGroupedFilesByName)) {
+            const max = value.reduce(function (prev, current) {
+              return prev.version_code > current.version_code ? prev : current;
+            });
+            arrayOfFilteredFilesByFileVersion.push(max);
+          }
+
+          serviceWithFilteredFiles.files = arrayOfFilteredFilesByFileVersion;
+        }
+
+        setFilteredService(serviceWithFilteredFiles);
+      }
+    }
+
+    getServiceWithFilteredFiles();
+  }, [selectedFilesVersion, service]);
+
+  const handleFilesVersionChange = (newSelectedFilesVersion) => {
+    setSelectedFilesVersion(newSelectedFilesVersion);
+  };
 
   let mainJsx = (
     <div className="flex justify-center my-4">
@@ -56,34 +104,59 @@ export default function ServicePage() {
 
   if (!loading && !error) {
     mainJsx = (
-      <div className="w-full lg:w-3/5 mx-auto">
-        <Collapsible
-          trigger={
-            <>
-              <p className="font-semibold">Swagger Collapsible</p>
-              <BsChevronDown size="1.1rem" />
-            </>
-          }
-          transitionTime="200"
-          triggerClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-lg shadow-md"
-          triggerOpenedClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-t-lg"
-          contentInnerClassName="p-2 rounded-b-lg bg-gray-100"
-          contentOuterClassName="shadow-md"
-        >
-          <iframe
-            src="https://petstore.swagger.io/"
-            name="iframe_a"
-            className="h-screen w-full"
-            // style={{ border: 'none', height: '480px', width: '640px' }}
-            title="Iframe Example"
-          ></iframe>
-        </Collapsible>
-      </div>
+      <ServiceCard>
+        <ServiceTitle title={filteredService.name} />
+        <ServiceHeader>
+          <ServiceImage image={filteredService.image} />
+          <ServiceDetailsContainer>
+            <ServiceInfo product={filteredService} />
+            <Select
+              labelDescription="Versão dos Arquivos: "
+              onChangeValue={handleFilesVersionChange}
+              selectedValue={selectedFilesVersion}
+            >
+              {[
+                { id: 'op1', description: 'Todas' },
+                { id: 'op2', description: 'Mais recente' },
+              ]}
+            </Select>
+          </ServiceDetailsContainer>
+        </ServiceHeader>
+        <FilesCollapsibleContainer>
+          <FilesCollapsible triggerTitleName="Documentação" filesFolder={SERVICE_FILES_FOLDER}>
+            {filteredService.files.filter((file) => file.category === 'Documentação')}
+          </FilesCollapsible>
+          <FilesCollapsible triggerTitleName="Recursos de Desenvolvimento" filesFolder={SERVICE_FILES_FOLDER}>
+            {filteredService.files.filter((file) => file.category === 'Recursos de Desenvolvimento')}
+          </FilesCollapsible>
+          <Collapsible
+            trigger={
+              <>
+                <p className="font-semibold">Área de Testes com {filteredService.test.type}</p>
+                <BsChevronDown size="1.1rem" />
+              </>
+            }
+            transitionTime="200"
+            triggerClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-lg shadow-md"
+            triggerOpenedClassName="flex flex-row p-2 items-center justify-between bg-yellow-100 rounded-t-lg"
+            contentInnerClassName="p-2 rounded-b-lg bg-gray-100"
+            contentOuterClassName="shadow-md"
+          >
+            <iframe
+              src={filteredService.test.link}
+              name="iframe_a"
+              className="h-screen w-full"
+              title="Service Testing"
+            ></iframe>
+          </Collapsible>
+        </FilesCollapsibleContainer>
+      </ServiceCard>
     );
   }
 
   return <>{mainJsx}</>;
 
+  // <div className="w-full lg:w-3/5 mx-auto">
   /* <p>
     <a href="https://petstore.swagger.io/" target="iframe_a">
       Swagger
@@ -98,4 +171,5 @@ export default function ServicePage() {
   ></iframe> */
   /* <iframe src="https://www.youtube.com/embed/cWDJoK8zw58" sandbox="" /> */
   /* <iframe src="https://www.youtube.com/embed/cWDJoK8zw58" /> */
+  // </div>
 }
