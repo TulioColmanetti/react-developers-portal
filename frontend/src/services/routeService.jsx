@@ -9,6 +9,7 @@ import HomePage from '../pages/HomePage';
 import ProductsPage from '../pages/ProductsPage';
 import ProductPage from '../pages/ProductPage';
 import ServicesPage from '../pages/ServicesPage';
+import ServicePage from '../pages/ServicePage';
 import KnowledgeBasePage from '../pages/KnowledgeBasePage';
 import ForumPage from '../pages/ForumPage';
 import SupportPage from '../pages/SupportPage';
@@ -43,6 +44,13 @@ export const APP_ROUTES = [
     description: 'Serviços',
     icon: <ServicesIcon />,
     component: <ServicesPage />,
+  },
+  {
+    id: idServiceGetNewId(),
+    path: '/services/:id',
+    description: 'Serviço',
+    icon: null,
+    component: <ServicePage />,
   },
   {
     id: idServiceGetNewId(),
