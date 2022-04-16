@@ -13,7 +13,6 @@ export default function KnowledgeBasePage() {
 
   return (
     <div className="flex flex-col space-y-2 max-w-6xl mx-auto p-4">
-      {/* <h3 className="text-center font-semibold mb-6">Base de conhecimento do Portal para Desenvolvedores</h3> */}
       {loading && (
         <div className="flex justify-center my-4">
           <Loading />
