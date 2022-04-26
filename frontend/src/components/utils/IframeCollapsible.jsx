@@ -17,7 +17,13 @@ export default function IframeCollapsible({ triggerTitleName = 'Iframe', iframeS
       contentInnerClassName="p-2 rounded-b-lg bg-gray-100"
       contentOuterClassName="shadow-md"
     >
-      <iframe src={iframeSrcUrl} name="iframe_a" className="h-screen w-full" title="Iframe Collapsible" />
+      <iframe
+        src={iframeSrcUrl}
+        name="iframe_a"
+        scrolling="no"
+        className="h-[162rem] w-full"
+        title="Iframe Collapsible"
+      />
     </Collapsible>
   );
 }
