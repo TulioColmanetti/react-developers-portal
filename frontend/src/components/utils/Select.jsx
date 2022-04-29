@@ -21,8 +21,8 @@ export default function Select({
   }
 
   return (
-    <div className="flex flex-row items-center space-x-4">
-      <label htmlFor={id} className="font-semibold">
+    <div className="flex flex-col sm:flex-row items:start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4">
+      <label htmlFor={id} className="font-semibold whitespace-nowrap">
         {labelDescription}
       </label>
 
