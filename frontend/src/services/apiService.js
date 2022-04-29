@@ -19,3 +19,8 @@ export async function apiGetServiceFrom(serviceId) {
   const { data } = await axios.get(`http://localhost:3001/services?id=${serviceId}`);
   return data;
 }
+
+export async function apiPostSupportRequest(supportReqData) {
+  const res = await axios.post(`http://localhost:3001/support`, supportReqData);
+  return res.status;
+}
