@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Input from '../components/utils/Input';
 import Select from '../components/utils/Select';
 import Loading from '../components/utils/Loading';
-import { apiGetAllProducts, apiGetAllServices } from '../services/apiService';
+import { apiGetAllProducts, apiGetAllServices, apiPostSupportRequest } from '../services/apiService';
 
 export default function SupportPage() {
   const [formData, setFormData] = useState({
@@ -83,10 +85,30 @@ export default function SupportPage() {
     setFormData({ ...formData, description: event.currentTarget.value });
   };
 
-  const handleButtonSubmitClick = (event) => {
-    if (formData.title !== '' && formData.description !== '') event.preventDefault();
+  const handleButtonSubmitClick = async (event) => {
+    if (formData.title !== '' && formData.description !== '') {
+      event.preventDefault();
 
-    // TODO: POST form data here to backend
+      const toastOptions = {
+        position: 'top-center',
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+      };
+
+      try {
+        const status = await apiPostSupportRequest(formData);
+
+        if (status === 201) {
+          toast.success('Solicitação de suporte enviada com sucesso!', toastOptions);
+        } else throw new Error('Falha ao enviar solicitação de suporte! Erro status: ' + status);
+      } catch (error) {
+        toast.error('Falha ao enviar solicitação de suporte!', toastOptions);
+      }
+
+      handleButtonClearClick();
+    }
   };
 
   const handleButtonClearClick = () => {
@@ -171,6 +193,7 @@ export default function SupportPage() {
     <div className="flex flex-col space-y-2 p-4 mx-auto items-center">
       <h3 className="text-center font-semibold mb-6">Suporte do Portal para Desenvolvedores</h3>
       {mainJsx}
+      <ToastContainer />
     </div>
   );
 }
