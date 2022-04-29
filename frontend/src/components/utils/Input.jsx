@@ -1,6 +1,13 @@
 import React from 'react';
 
-export default function Input({ id = 'id', type = 'text', labelName = 'label', textPlaceHolder = 'placeholder' }) {
+export default function Input({
+  id = 'id',
+  type = 'text',
+  labelName = 'label',
+  textPlaceHolder = 'placeholder',
+  onChangeValue = null,
+  inputValue = '',
+}) {
   return (
     <div>
       <label htmlFor={id} className="font-semibold">
@@ -12,8 +19,8 @@ export default function Input({ id = 'id', type = 'text', labelName = 'label', t
         id={id}
         required
         placeholder={textPlaceHolder}
-        // value={grade.name}
-        // onChange={handleInputChange}
+        onChange={onChangeValue}
+        value={inputValue}
       />
     </div>
   );
