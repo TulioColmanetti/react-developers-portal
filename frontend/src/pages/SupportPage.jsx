@@ -60,8 +60,6 @@ export default function SupportPage() {
     }
   }, [selectedCategory]);
 
-  console.log(formData);
-
   const handleSelectedCategoryChange = (newSelectedCategory) => {
     setSelectedCategory(newSelectedCategory);
   };
