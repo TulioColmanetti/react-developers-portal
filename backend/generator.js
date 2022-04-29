@@ -308,6 +308,7 @@ function start() {
       {
         products: generateProducts(),
         services: generateServices(),
+        support: [],
       },
       null,
       2
