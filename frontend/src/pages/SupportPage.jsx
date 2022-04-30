@@ -6,6 +6,12 @@ import Input from '../components/utils/Input';
 import Select from '../components/utils/Select';
 import Loading from '../components/utils/Loading';
 import { apiGetAllProducts, apiGetAllServices, apiPostSupportRequest } from '../services/apiService';
+import TextArea from '../components/utils/TextArea';
+import FormCard from '../components/support/FormCard';
+import FormTitle from '../components/support/FormTitle';
+import FormSelectContainer from '../components/support/FormSelectContainer';
+import FormButtonContainer from '../components/support/FormButtonContainer';
+import Button from '../components/utils/Button';
 
 export default function SupportPage() {
   const [formData, setFormData] = useState({
@@ -127,10 +133,8 @@ export default function SupportPage() {
 
   if (!loading) {
     mainJsx = (
-      <form className="flex flex-col w-full py-4 px-8 mt-8 max-w-2xl lg:max-w-4xl bg-gray-200 rounded-lg shadow-md">
-        <h4 className="text-xl text-center font-semibold pb-2 mb-8 border-b-2 border-gray-300">
-          Formulário de Solicitação de Suporte
-        </h4>
+      <FormCard>
+        <FormTitle title="Formulário de Solicitação de Suporte" />
         <Input
           id="title"
           type="text"
@@ -139,7 +143,7 @@ export default function SupportPage() {
           onChangeValue={handleFormTitleChange}
           inputValue={formData.title}
         />
-        <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-8 lg:space-y-0 lg:justify-between mt-4 mb-8">
+        <FormSelectContainer>
           <Select
             labelDescription="Categoria de Suporte"
             onChangeValue={handleSelectedCategoryChange}
@@ -157,35 +161,19 @@ export default function SupportPage() {
           >
             {selectedCategory === 'op1' ? products : services}
           </Select>
-        </div>
-        <label htmlFor="description" className="font-semibold">
-          Descrição
-        </label>
-        <textarea
+        </FormSelectContainer>
+        <TextArea
           id="description"
-          name="description"
-          rows="5"
-          required
-          placeholder="Insira a descrição da solicitação"
-          className="mt-2 mb-4 p-2 block w-full rounded-md bg-gray-50"
-          onChange={handleFormDescriptionChange}
-          value={formData.description}
+          labelName="Descrição"
+          textPlaceHolder="Insira a descrição da solicitação"
+          onChangeValue={handleFormDescriptionChange}
+          inputValue={formData.description}
         />
-        <div className="flex flex-row justify-end space-x-4 mt-4">
-          <input
-            type="button"
-            onClick={handleButtonClearClick}
-            className="font-semibold py-2 px-4 w-min rounded-md bg-red-100 shadow-md hover:cursor-pointer hover:text-red-500 hover:scale-105"
-            value="Limpar"
-          />
-          <input
-            type="submit"
-            onClick={handleButtonSubmitClick}
-            className="font-semibold py-2 px-4 w-min rounded-md bg-yellow-100 shadow-md hover:cursor-pointer hover:text-yellow-500 hover:scale-105"
-            value="Enviar"
-          />
-        </div>
-      </form>
+        <FormButtonContainer>
+          <Button buttonType="button" onButtonClick={handleButtonClearClick} color="red" textValue="Limpar" />
+          <Button buttonType="submit" onButtonClick={handleButtonSubmitClick} color="yellow" textValue="Enviar" />
+        </FormButtonContainer>
+      </FormCard>
     );
   }
 
