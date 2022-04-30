@@ -104,11 +104,11 @@ export default function SupportPage() {
       };
 
       try {
-        const status = await apiPostSupportRequest(formData);
+        const response = await apiPostSupportRequest(formData);
 
-        if (status === 201) {
+        if (response.status === 201) {
           toast.success('Solicitação de suporte enviada com sucesso!', toastOptions);
-        } else throw new Error('Falha ao enviar solicitação de suporte! Erro status: ' + status);
+        } else throw new Error('Falha ao enviar solicitação de suporte! Erro status: ' + response);
       } catch (error) {
         toast.error('Falha ao enviar solicitação de suporte!', toastOptions);
       }
