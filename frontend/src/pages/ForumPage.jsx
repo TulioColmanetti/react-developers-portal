@@ -21,7 +21,7 @@ export default function ForumPage() {
       <iframe
         src={FORUM_SRC_URL}
         name="iframe_a"
-        className="h-screen w-full"
+        className="h-[93rem] w-full"
         title="Iframe Knowledge Base"
         onLoad={handleIframeLoad}
       />
