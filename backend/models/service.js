@@ -27,6 +27,6 @@ const studentSchema = mongoose.Schema({
   },
 });
 
-const studentModel = mongoose.model('student', studentSchema, 'student');
+const serviceModel = mongoose.model('student', studentSchema, 'student');
 
-export { studentModel };
+export { serviceModel };
