@@ -170,8 +170,8 @@ export default function SupportPage() {
           inputValue={formData.description}
         />
         <FormButtonContainer>
-          <Button buttonType="button" onButtonClick={handleButtonClearClick} color="red" textValue="Limpar" />
-          <Button buttonType="submit" onButtonClick={handleButtonSubmitClick} color="yellow" textValue="Enviar" />
+          <Button buttonType="button" onButtonClick={handleButtonClearClick} buttonColor="red" textValue="Limpar" />
+          <Button buttonType="submit" onButtonClick={handleButtonSubmitClick} buttonColor="yellow" textValue="Enviar" />
         </FormButtonContainer>
       </FormCard>
     );
