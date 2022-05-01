@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const studentSchema = mongoose.Schema({
+const productSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -27,6 +27,6 @@ const studentSchema = mongoose.Schema({
   },
 });
 
-const productModel = mongoose.model('student', studentSchema, 'student');
+const productModel = mongoose.model('products', productSchema);
 
 export { productModel };
