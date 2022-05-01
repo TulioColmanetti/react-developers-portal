@@ -22,7 +22,7 @@ export default function ForumPage() {
         src={FORUM_SRC_URL}
         name="iframe_a"
         className="h-[93rem] w-full"
-        title="Iframe Knowledge Base"
+        title="Iframe Forum"
         onLoad={handleIframeLoad}
       />
     </div>
