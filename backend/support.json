@@ -16,5 +16,37 @@
     "sel_product_service_name": "Atualização Online - A",
     "description": "teste2",
     "id": 2
+  },
+  {
+    "name": "TV 4K (32 GB)",
+    "price": 10000,
+    "id": 3
+  },
+  {
+    "title": "Titulo",
+    "category_id": "op1",
+    "category_name": "Produtos",
+    "sel_product_service_id": "70a06456-119d-4995-8541-ab17ef85c692",
+    "sel_product_service_name": "Impressora - 8",
+    "description": "Descricao",
+    "id": 4
+  },
+  {
+    "title": "Titulo da Solicitação 1",
+    "category_id": "op1",
+    "category_name": "Produtos",
+    "sel_product_service_id": "70a06456-119d-4995-8541-ab17ef85c692",
+    "sel_product_service_name": "Impressora - 8",
+    "description": "Descrição da Solicitação 1",
+    "id": 5
+  },
+  {
+    "title": "Titulo da Solicitação 1",
+    "category_id": "op1",
+    "category_name": "Produtos",
+    "sel_product_service_id": "70a06456-119d-4995-8541-ab17ef85c692",
+    "sel_product_service_name": "Maquininha de Pagamento (POS) - 3",
+    "description": "Descrição da Solicitação 1",
+    "id": 6
   }
 ]
