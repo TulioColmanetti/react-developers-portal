@@ -1,25 +1,38 @@
 import mongoose from 'mongoose';
 
 const productSchema = mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
   },
-  subject: {
+  description: {
     type: String,
     required: true,
   },
-  type: {
+  category: {
     type: String,
     required: true,
   },
-  value: {
-    type: Number,
+  model: {
+    type: String,
     required: true,
-    //Valida se a nota inserida e' menor que zero
-    validate(value) {
-      if (value < 0) throw new Error('Valor negativo para nota');
-    },
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  firmare_versions: {
+    type: [String],
+    required: true,
+  },
+  files: {
+    type: Array,
+    default: [],
+    required: true,
   },
   lastModified: {
     type: Date,

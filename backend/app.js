@@ -37,7 +37,4 @@ app.get('/', (_req, res) => {
   res.send('API em execução!');
 });
 
-// app.use(express.json());
-// app.use(devPortalRouter);
-
 app.listen(process.env.PORT, () => console.log('Server running...'));

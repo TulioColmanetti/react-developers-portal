@@ -1,25 +1,35 @@
 import mongoose from 'mongoose';
 
 const serviceSchema = mongoose.Schema({
+  id: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
   },
-  subject: {
+  description: {
     type: String,
     required: true,
   },
-  type: {
+  category: {
     type: String,
     required: true,
   },
-  value: {
-    type: Number,
+  image: {
+    type: String,
     required: true,
-    //Valida se a nota inserida e' menor que zero
-    validate(value) {
-      if (value < 0) throw new Error('Valor negativo para nota');
-    },
+  },
+  test: {
+    type: Object,
+    default: {},
+    required: true,
+  },
+  files: {
+    type: Array,
+    default: [],
+    required: true,
   },
   lastModified: {
     type: Date,

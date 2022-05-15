@@ -18,13 +18,13 @@ app.get('/products', async (req, res) => {
 
 app.get('/products/:id', async (req, res) => {
   try {
-    const product = await productModel.findOne(req.params.id);
+    const product = await productModel.findOne({ id: req.params.id });
 
     if (!product) {
       res.status(404).send('Produto não encontrado!');
     }
 
-    res.status(200).send();
+    res.status(200).send(product);
   } catch (err) {
     res.status(500).send(err);
   }
@@ -43,13 +43,13 @@ app.get('/services', async (req, res) => {
 
 app.get('/services/:id', async (req, res) => {
   try {
-    const service = await serviceModel.findOne(req.params.id);
+    const service = await serviceModel.findOne({ id: req.params.id });
 
     if (!service) {
       res.status(404).send('Serviço não encontrado!');
     }
 
-    res.status(200).send();
+    res.status(200).send(service);
   } catch (err) {
     res.status(500).send(err);
   }
