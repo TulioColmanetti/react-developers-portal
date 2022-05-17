@@ -31,8 +31,8 @@ export default function ProductPage() {
         const apiProduct = await apiGetProductFrom(productId);
         // .sort((a, b) => a.name.localeCompare(b.name));
 
-        if (apiProduct && apiProduct.length > 0) {
-          const currentProduct = apiProduct[0];
+        if (apiProduct) {
+          const currentProduct = apiProduct;
           setProduct(currentProduct);
           setFilteredProduct(Object.assign({}, currentProduct));
           setSelectedFirmwareVersion(currentProduct.firmare_versions[0]);

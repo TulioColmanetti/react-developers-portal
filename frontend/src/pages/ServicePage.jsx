@@ -31,8 +31,8 @@ export default function ServicePage() {
         const apiService = await apiGetServiceFrom(serviceId);
         // .sort((a, b) => a.name.localeCompare(b.name));
 
-        if (apiService && apiService.length > 0) {
-          const currentService = apiService[0];
+        if (apiService) {
+          const currentService = apiService;
           setService(currentService);
           setFilteredService(Object.assign({}, currentService));
           // op1 = "Todas"

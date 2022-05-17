@@ -6,7 +6,7 @@ export async function apiGetAllProducts() {
 }
 
 export async function apiGetProductFrom(productId) {
-  const { data } = await axios.get(`http://localhost:3001/products?id=${productId}`);
+  const { data } = await axios.get(`http://localhost:3001/products/${productId}`);
   return data;
 }
 
@@ -16,7 +16,7 @@ export async function apiGetAllServices() {
 }
 
 export async function apiGetServiceFrom(serviceId) {
-  const { data } = await axios.get(`http://localhost:3001/services?id=${serviceId}`);
+  const { data } = await axios.get(`http://localhost:3001/services/${serviceId}`);
   return data;
 }
 
