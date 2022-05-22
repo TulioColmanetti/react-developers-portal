@@ -22,9 +22,9 @@ app.get('/products/:id', async (req, res) => {
 
     if (!product) {
       res.status(404).send('Produto não encontrado!');
+    } else {
+      res.status(200).send(product);
     }
-
-    res.status(200).send(product);
   } catch (err) {
     res.status(500).send(err);
   }
@@ -47,9 +47,9 @@ app.get('/services/:id', async (req, res) => {
 
     if (!service) {
       res.status(404).send('Serviço não encontrado!');
+    } else {
+      res.status(200).send(service);
     }
-
-    res.status(200).send(service);
   } catch (err) {
     res.status(500).send(err);
   }
